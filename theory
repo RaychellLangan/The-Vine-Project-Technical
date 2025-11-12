@@ -1,0 +1,111 @@
+ 🧠 Theoretical Foundations
+
+This bibliography represents the foundational literature informing The Vine Project's approach to AI architecture.
+
+Our work draws on established research in curiosity-driven learning, pattern recognition, animal cognition, and geometric approaches to computation.
+
+ 🌿 Core Thesis:  
+ AI systems can move beyond purely associative learning toward intrinsic exploration and conceptual understanding through mathematical constraint, rather than loss-based optimization.
+
+
+
+ 📍 Curiosity-Driven Pattern Discovery
+
+Research establishing intrinsic motivation and exploration as computational primitives for robust learning.
+
+ Pathak et al. (2017) — _Curiosity-driven Exploration by Self-supervised Prediction_  
+  [📄 PDF](https://proceedings.mlr.press/v70/pathak17a/pathak17a.pdf) | [🔗 DOI](https://doi.org/10.5555/3305890.3305968)  
+  _Intrinsic reward mechanisms enabling agents to discover novel patterns without external supervision—foundational to Vine's contextual relevance modeling._
+
+ Oudeyer (2018) — _Computational Theories of Curiosity-Driven Learning_  
+  [📄 PDF](https://arxiv.org/pdf/1802.10546) | [🔗 arXiv](https://arxiv.org/abs/1802.10546)  
+  _Unifies curiosity frameworks through information theory and learning progress._
+
+ Burda et al. (2018) — _Large-Scale Study of Curiosity-Driven Learning_  
+  [📄 PDF](https://arxiv.org/pdf/1808.04355) | [🔗 arXiv](https://arxiv.org/abs/1808.04355)  
+  _Exploration advantages in high-dimensional environments using scalable intrinsic rewards._
+
+ Modirshanechi et al. (2023) — _Curiosity-driven Exploration: Foundations in Neuroscience and Computational Modeling_  
+  [🔗 DOI](https://doi.org/10.1016/j.tics.2023.09.006)  
+  _Bridges reinforcement learning with neuroscience through unified curiosity mechanisms._
+
+ Still & Precup (2012) — _An Information-Theoretic Approach to Curiosity-Driven RL_  
+  _Entropy-based rewards for uncertainty reduction in self-supervised learning._
+
+
+ 🧬 Pattern Recognition Literature
+
+Works establishing both capabilities and limitations of statistical pattern learning.
+
+ Bishop (2006) — _Pattern Recognition and Machine Learning_  
+  _Comprehensive Bayesian framework for probabilistic classification._
+
+ Rosenblatt (1958) — _The Perceptron: A Probabilistic Model..._  
+  [🔗 DOI](https://doi.org/10.1037/h0042519)  
+  _Seminal work introducing weighted associative learning._
+
+ Duda, Hart & Stork (2000) — _Pattern Classification (2nd ed.)_  
+  _Covers supervised and unsupervised methods; highlights generalization issues._
+
+ Jain et al. (2000) — _Statistical Pattern Recognition: A Review_  
+  [🔗 DOI](https://doi.org/10.1109/34.888865)  
+  _Evolution from feature engineering to machine learning._
+
+
+
+ 🐒 Animal Cognition & Learning Theory
+
+Biological learning mechanisms, foundational for constraint-based systems.
+
+ Schmajuk (1997) — _Animal Learning and Cognition_  
+  _Neural network models of classical and operant conditioning._
+
+ Livesey (2023) — _Computational Models of Associative Learning_  
+  [🔗 DOI](https://doi.org/10.1017/9781108523928.022)  
+  _Bridges prediction-error and attention in animal/human learning._
+
+ Voudouris et al. (2024) — _The Animal-AI Environment_  
+  [🔗 DOI](https://doi.org/10.3758/s13428-025-02616-3)  
+  _Simulated benchmarks for comparative cognition._
+
+ Kamil (1998) — _On the Proper Definition of Cognitive Ethology_  
+  _Frames intelligence as constraint-bound pattern application._
+
+
+
+ 🔷 Geometric & Topological Approaches
+
+Mathematical structure behind learned relationships.
+
+ Carlsson & Gabrielsson (2018) — _Topological Approaches to Deep Learning_  
+  [🔗 DOI](https://doi.org/10.48550/arXiv.1811.01122)  
+  _Topology for neural network structure characterization._
+
+ Magai et al. (2022) — _Topology and Geometry of Data Manifolds_  
+  [🔗 DOI](https://doi.org/10.48550/arXiv.2204.08624)  
+  _Manifold dynamics and intrinsic dimensionality._
+
+ Lin (2022) — _Topological Inference for Deep Representations_  
+  [🔗 DOI](https://doi.org/10.48550/arXiv.2203.05488)  
+  _Persistent homology and interpretability._
+
+ Rathore et al. (2022) — _A Topological ML Pipeline for Classification_  
+  [🔗 DOI](https://doi.org/10.3390/math10173086)  
+  _Demonstrates feasibility of topological methods._
+
+
+
+🕰 Historical Foundations
+
+Early explorations of adaptive, pattern-seeking intelligence.
+
+ Rosenblatt (1962) — _Principles of Neurodynamics_  
+  _Formalization of perceptron learning and adaptive systems._
+
+ Rosenblatt (1958) — _The Design of an Intelligent Automaton_  
+  _Hardware-oriented exploration of self-organizing principles._
+
+ Selfridge (1955) — _Pattern Recognition and Modern Computers_  
+  _Pioneer work on probabilistic recognition._
+
+
