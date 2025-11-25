@@ -1,111 +1,72 @@
- 🧠 Theoretical Foundations
+Theoretical Foundations
+Core Thesis:
+AI systems can achieve robust learning and conceptual understanding through geometric constraint and basin-settling dynamics, rather than loss-based optimization alone.
+Foundational Works
+Early explorations establishing adaptive, self-organizing systems.
 
-This bibliography represents the foundational literature informing The Vine Project's approach to AI architecture.
+Rosenblatt, F. (1958) — The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain
+Seminal work introducing weighted associative learning and adaptive pattern recognition. DOI: 10.1037/h0042519.
+Rosenblatt, F. (1962) — Principles of Neurodynamics: Perceptrons and the Theory of Brain Mechanisms
+Formalization of perceptron learning and self-organizing adaptive systems. Spartan Books.
+Minsky, M. & Papert, S. (1969) — Perceptrons: An Introduction to Computational Geometry
+Proof of single-layer perceptron limitations with linear separators—establishes the XOR problem. MIT Press.
+Selfridge, O. G. (1955) — Pattern Recognition and Modern Computers
+Pioneer work on probabilistic recognition and early machine learning. Proc. Western Joint Comput. Conf., pp. 91-93.
+Grossberg, S. (1976) — Adaptive Pattern Classification and Universal Recoding, I: Parallel Development and Coding of Neural Feature Detectors
+Introduces Adaptive Resonance Theory (ART) and early mechanisms for self-organizing feature maps with stability/plasticity, a conceptual precursor to modern ideas of stable basins of attraction. DOI: 10.1007/BF00339954.
 
-Our work draws on established research in curiosity-driven learning, pattern recognition, animal cognition, and geometric approaches to computation.
+Geometric and Topological Computation
+Mathematical structures underlying learned relationships and basin-settling dynamics.
 
- 🌿 Core Thesis:  
- AI systems can move beyond purely associative learning toward intrinsic exploration and conceptual understanding through mathematical constraint, rather than loss-based optimization.
+Hopfield, J. J. (1982) — Neural networks and physical systems with emergent collective computational abilities
+Foundational work on attractor networks and energy landscapes—computation as basin-settling in phase space. DOI: 10.1073/pnas.79.8.2554.
+Kohonen, T. (1982) — Self-organized formation of topologically correct feature maps
+Automatic topological ordering through self-organization and spatial learning. DOI: 10.1007/BF00337288.
+Bronstein, M. M., Bruna, J., LeCun, Y., Szlam, A., & Vandergheynst, P. (2017) — Geometric Deep Learning: Going beyond Euclidean data
+Framework for neural networks on non-Euclidean domains and geometric manifolds. arXiv:1611.08097 | DOI: 10.1109/MSP.2017.2693418.
+Monti, F. et al. (2017) — Geometric Deep Learning on Graphs and Manifolds Using Mixture Model CNNs
+A more recent, comprehensive approach reinforcing the idea of moving beyond Euclidean data, directly relevant to modeling learned representations on complex manifolds. arXiv:1611.08402 | DOI: 10.1109/CVPR.2017.74.
+Carlsson, G. & Gabrielsson, R. B. (2018) — Topological Approaches to Deep Learning
+Topology for characterizing neural network structure and learned representations. arXiv:1811.01122.
+Magay, G. (2022) — Topology and Geometry of Data Manifold in Deep Learning
+Manifold dynamics and intrinsic dimensionality in learned spaces. arXiv:2204.08624.
+Wang, Y. & Wang, B. (2018/2020) — Topological Inference of Manifolds with Boundary
+Persistent homology approaches to interpretability. arXiv:1810.05759 | DOI: 10.1016/j.comgeo.2019.101606.
+Chazal, F. & Michel, B. (2021) — An Introduction to Topological Data Analysis: Fundamental and Practical Aspects for Data Scientists
+A more formal and practical TDA text. TDA is crucial for defining and quantifying the geometric constraint and topological structure of the data manifold. arXiv:1710.04019 | DOI: 10.3389/frai.2021.667963.
 
+Core Mechanics
+Contrast to loss-based optimization.
 
+Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986) — Learning Representations by Back-propagating Errors
+The definitive paper on backpropagation/loss-based optimization. Including it provides a clear contrast to the core thesis ("rather than loss-based optimization alone"), framing the argument effectively. DOI: 10.1038/323533a0.
 
- 📍 Curiosity-Driven Pattern Discovery
+Curiosity-Driven Learning
+Intrinsic motivation and exploration as computational primitives.
 
-Research establishing intrinsic motivation and exploration as computational primitives for robust learning.
+Pathak, D., Agrawal, P., Efros, A. A., & Darrell, T. (2017) — Curiosity-driven Exploration by Self-supervised Prediction
+Intrinsic reward mechanisms for discovering novel patterns without external supervision. arXiv:1705.05363 | ICML Proceedings.
+Oudeyer, P.-Y. (2018) — Computational Theories of Curiosity-Driven Learning
+Unifies curiosity frameworks through information theory and learning progress. arXiv:1802.10546.
+Burda, Y., Edwards, H., Storkey, A., & Klimov, O. (2018) — Exploration by Random Network Distillation
+Scalable intrinsic rewards for exploration in high-dimensional environments. arXiv:1810.12894.
+Still, S. & Precup, D. (2012) — An Information-Theoretic Approach to Curiosity-Driven Reinforcement Learning
+Entropy-based rewards for uncertainty reduction in self-supervised learning. DOI: 10.1007/s12064-011-0142-z.
 
- Pathak et al. (2017) — _Curiosity-driven Exploration by Self-supervised Prediction_  
-  [📄 PDF](https://proceedings.mlr.press/v70/pathak17a/pathak17a.pdf) | [🔗 DOI](https://doi.org/10.5555/3305890.3305968)  
-  _Intrinsic reward mechanisms enabling agents to discover novel patterns without external supervision—foundational to Vine's contextual relevance modeling._
+Pattern Recognition and Statistical Learning
+Established methods and their limitations.
 
- Oudeyer (2018) — _Computational Theories of Curiosity-Driven Learning_  
-  [📄 PDF](https://arxiv.org/pdf/1802.10546) | [🔗 arXiv](https://arxiv.org/abs/1802.10546)  
-  _Unifies curiosity frameworks through information theory and learning progress._
+Bishop, C. M. (2006) — Pattern Recognition and Machine Learning
+Comprehensive Bayesian framework for probabilistic classification. Springer.
+Duda, R. O., Hart, P. E., & Stork, D. G. (2000) — Pattern Classification (2nd ed.)
+Supervised and unsupervised methods; generalization challenges. Wiley.
+Jain, A. K., Duin, R. P. W., & Mao, J. (2000) — Statistical Pattern Recognition: A Review
+Evolution from feature engineering to machine learning approaches. DOI: 10.1109/34.824819.
 
- Burda et al. (2018) — _Large-Scale Study of Curiosity-Driven Learning_  
-  [📄 PDF](https://arxiv.org/pdf/1808.04355) | [🔗 arXiv](https://arxiv.org/abs/1808.04355)  
-  _Exploration advantages in high-dimensional environments using scalable intrinsic rewards._
+Animal Cognition and Biological Learning
+Biological mechanisms informing constraint-based systems.
 
- Modirshanechi et al. (2023) — _Curiosity-driven Exploration: Foundations in Neuroscience and Computational Modeling_  
-  [🔗 DOI](https://doi.org/10.1016/j.tics.2023.09.006)  
-  _Bridges reinforcement learning with neuroscience through unified curiosity mechanisms._
-
- Still & Precup (2012) — _An Information-Theoretic Approach to Curiosity-Driven RL_  
-  _Entropy-based rewards for uncertainty reduction in self-supervised learning._
-
-
- 🧬 Pattern Recognition Literature
-
-Works establishing both capabilities and limitations of statistical pattern learning.
-
- Bishop (2006) — _Pattern Recognition and Machine Learning_  
-  _Comprehensive Bayesian framework for probabilistic classification._
-
- Rosenblatt (1958) — _The Perceptron: A Probabilistic Model..._  
-  [🔗 DOI](https://doi.org/10.1037/h0042519)  
-  _Seminal work introducing weighted associative learning._
-
- Duda, Hart & Stork (2000) — _Pattern Classification (2nd ed.)_  
-  _Covers supervised and unsupervised methods; highlights generalization issues._
-
- Jain et al. (2000) — _Statistical Pattern Recognition: A Review_  
-  [🔗 DOI](https://doi.org/10.1109/34.888865)  
-  _Evolution from feature engineering to machine learning._
-
-
-
- 🐒 Animal Cognition & Learning Theory
-
-Biological learning mechanisms, foundational for constraint-based systems.
-
- Schmajuk (1997) — _Animal Learning and Cognition_  
-  _Neural network models of classical and operant conditioning._
-
- Livesey (2023) — _Computational Models of Associative Learning_  
-  [🔗 DOI](https://doi.org/10.1017/9781108523928.022)  
-  _Bridges prediction-error and attention in animal/human learning._
-
- Voudouris et al. (2024) — _The Animal-AI Environment_  
-  [🔗 DOI](https://doi.org/10.3758/s13428-025-02616-3)  
-  _Simulated benchmarks for comparative cognition._
-
- Kamil (1998) — _On the Proper Definition of Cognitive Ethology_  
-  _Frames intelligence as constraint-bound pattern application._
-
-
-
- 🔷 Geometric & Topological Approaches
-
-Mathematical structure behind learned relationships.
-
- Carlsson & Gabrielsson (2018) — _Topological Approaches to Deep Learning_  
-  [🔗 DOI](https://doi.org/10.48550/arXiv.1811.01122)  
-  _Topology for neural network structure characterization._
-
- Magai et al. (2022) — _Topology and Geometry of Data Manifolds_  
-  [🔗 DOI](https://doi.org/10.48550/arXiv.2204.08624)  
-  _Manifold dynamics and intrinsic dimensionality._
-
- Lin (2022) — _Topological Inference for Deep Representations_  
-  [🔗 DOI](https://doi.org/10.48550/arXiv.2203.05488)  
-  _Persistent homology and interpretability._
-
- Rathore et al. (2022) — _A Topological ML Pipeline for Classification_  
-  [🔗 DOI](https://doi.org/10.3390/math10173086)  
-  _Demonstrates feasibility of topological methods._
-
-
-
-🕰 Historical Foundations
-
-Early explorations of adaptive, pattern-seeking intelligence.
-
- Rosenblatt (1962) — _Principles of Neurodynamics_  
-  _Formalization of perceptron learning and adaptive systems._
-
- Rosenblatt (1958) — _The Design of an Intelligent Automaton_  
-  _Hardware-oriented exploration of self-organizing principles._
-
- Selfridge (1955) — _Pattern Recognition and Modern Computers_  
-  _Pioneer work on probabilistic recognition._
-
-
+Schmajuk, N. A. (1997) — Animal Learning and Cognition: A Neural Network Approach
+Neural network models of classical and operant conditioning. Cambridge University Press.
+Kamil, A. C. (1998) — On the Proper Definition of Cognitive Ethology
+Intelligence as constraint-bound pattern application in natural contexts. In Animal Cognition in Nature, pp. 1-28.
