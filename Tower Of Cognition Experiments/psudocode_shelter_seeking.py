@@ -16,7 +16,7 @@ What's redacted:
 - Concept formation mechanisms
 - Memory consolidation processes
 
-For collaboration inquiries: [GitHub Issues]
+For collaboration inquiries:  Contact via repository issues
 """
 
 import math
