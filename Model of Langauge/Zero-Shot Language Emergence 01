@@ -1,0 +1,57 @@
+Zero-Shot Language Emergence from World-State: Observation Report
+
+Abstract
+
+This document reports observed language emergence in a procedural world simulation. Approximately 100 autonomous actors generate tokens from world-state without pretraining. Over 100 independent cold starts and multiple days of cumulative runtime, language structure converges consistently and remains stable. No external training signal is applied.
+
+1. Introduction
+Standard approaches to language generation in simulated agents typically rely on pretrained models, scripted dialogue trees, or fine-tuned language models. These approaches impose language structure externally.
+This report documents an alternative observation: language tokens emerging from world-state in a procedural simulation, acquired through use rather than training. The system described here does not employ pretraining, dialogue scripting, or external language models for agent communication.
+
+2. System Configuration
+The Cartographer is a procedural world simulation. The test configuration operates approximately 100 autonomous actors at 4% CPU utilisation.
+Each actor is assigned a role (baker, farmer, weaver, etc.) and held to behavioural routines including sleep cycles and job-related tasks. Actors maintain internal state reflecting their current goals, task progress, and environmental conditions.
+
+3. Language Generation Mechanism
+Actors generate tokens derived from internal state. No pretraining is applied. Vocabulary acquisition occurs through interaction within the simulation environment.
+Interactions are proximity-triggered. When two actors are near one another, an exchange may occur. The duration and complexity of interactions increases proportionally to the count of prior successful interactions between that actor pair. This produces a natural progression from brief initial contact toward longer exchanges as relationships develop.
+Actors have access to a full English vocabulary set. However, observed vocabulary acquisition is limited to tokens with functional relevance to the actor's world-state and task requirements.
+Emoji symbols function as low-weight semantic markers. These provide categorical bootstrapping, enabling rapid distribution of new concepts across the actor population prior to full vocabulary attachment. This reduces acquisition friction for novel semantic categories.
+
+4. Observed Behaviour
+Village_Chat_01 and Village_Chat_02 show captures from the simulation's village chat interface, taken approximately one hour apart.
+
+Village_Chat_01
+Actor_056 is assigned the baker role. At time of capture, the purchasing system contained incomplete logic, preventing Actor_056 from acquiring materials necessary to complete their assigned task chain.
+Actor_056's output across multiple exchanges: "warning", "problem", "danger", "job", "when", "problem". The token selection directly reflects the blocked internal state. The repetition of "problem" and "warning" is not random variation but persistent signalling of an unresolved condition.
+Actor_004 outputs: "when", "problem", "warning", "assist". This constitutes a contextually appropriate response - acknowledgement of the problem state and offer of assistance. No scripting governs this exchange. The social coherence emerges from the interaction system.
+
+Village_Chat_02
+Approximately one hour later, vocabulary shows compression toward efficiency.
+Actor_001 progresses from "hi done job time error hello" to "complete hi" - fewer tokens conveying equivalent meaning. Actor_003 follows a similar pattern, moving from longer token strings to "done hi work".
+New tokens "complete" and "done" have emerged, indicating task completion states. The vocabulary is not simply accumulating - it is refining through use.
+
+5. Reproducibility and Stability
+The simulation has been run from cold start over 100 times. Across independent initialisations with no shared weights or prior state, language structure converges to consistent patterns.
+Cumulative runtime across test sessions spans multiple days. No degradation of language coherence has been observed. Actors do not drift toward repetitive loops, nonsense output, or incoherent token generation.
+This stability holds despite actors having access to the full English vocabulary. The system does not require vocabulary restriction to maintain coherence - actors simply do not acquire tokens beyond functional necessity.
+
+6. Error Correction
+Actors may generate contextually inappropriate outputs. For example, an actor might request bread from the weaver rather than the baker.
+When such errors occur, the learning rate for that interaction increases. The system self-corrects toward coherence over subsequent interactions. No external training signal or correction mechanism is applied. The correction emerges from the interaction dynamics.
+
+7. Current Limitations
+This is an early-stage demonstration. Several simulation systems remain incomplete:
+
+Loot tables contain gaps
+Purchasing logic is partially implemented
+Some task chains cannot be completed due to missing item availability
+
+The observed distress signalling from Actor_056 reflects these genuine system limitations. As these systems are completed, actor behaviour is expected to shift accordingly.
+
+8. Summary
+This report documents coherent zero-shot language acquisition in a procedural world simulation. Tokens are generated from world-state without pretraining. Language structure converges across independent cold starts. The system remains stable over extended runtime without external correction.
+Further documentation will follow as simulation systems are completed and additional observations are recorded.
+
+9. Contact
+If this work is of interest, questions and enquiries are welcome via GitHub Issues.
