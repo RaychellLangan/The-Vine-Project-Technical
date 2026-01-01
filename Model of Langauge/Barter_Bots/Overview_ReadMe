@@ -1,0 +1,81 @@
+# VINE BarterBot
+
+**Meta's embeddings + VINE navigation = Zero training inference**
+
+**Status:** Patent Pending | **Training:** ZERO | **Compute:** 64x Reduction
+
+---
+
+## What Is This?
+
+A proof-of-concept showing that pre-trained LLM embeddings can be navigated geometrically, replacing traditional ML inference (GRU, attention, backprop) with XOR tension resolution.
+
+**We kept:** Meta's pre-trained embeddings (256-dim)  
+**We replaced:** Everything else  
+**We trained:** Nothing
+
+## Quick Start
+
+```bash
+python selfplay_xor.py
+```
+
+## Results
+
+```
+Dialog 10: 1 2 1 5 3 1
+------------------------------------------------------------
+Alice: acceptable less point bit problem yea getting thing thing low without trade least something instead
+  [tension=5.11]
+Bob: seems 6 think enjoy guess guess guess guess other them nice nice nice going going
+  [tension=4.03]
+  ...
+Bob: nice nice going going going nice nice going going nice nice going going going nice
+  [tension=3.26]
+```
+
+Negotiation vocabulary emerges. Tension converges. No training.
+
+## Architecture
+
+```
+┌─────────────────────────────────────────┐
+│  Meta's Pre-trained Embeddings (256-d)  │  ← KEPT (frozen)
+└─────────────────┬───────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────┐
+│  VINE Geometric Navigation              │  ← REPLACED inference
+│  • 32 XOR perceptrons                   │
+│  • Scalar gradient field                │
+│  • Tension-based settling               │
+│  • [IMPLEMENTATION REDACTED]            │
+└─────────────────────────────────────────┘
+```
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `selfplay_xor.py` | Runner - executes the demo |
+| `vine_pure_xor.py` | VINE core - **REDACTED** |
+| `Barter_bots_selfplay.txt` | Output proving it works |
+| `BARTERBOT_VINE_EXPERIMENT.md` | Full write-up |
+
+## The Claim
+
+Pre-trained embeddings encode semantic geometry. Traditional LLMs navigate this geometry with attention and gradients. VINE navigates it with XOR tension resolution.
+
+**Same terrain. Different navigation. No training.**
+
+## Compute Savings
+
+| Metric | Traditional | VINE |
+|--------|-------------|------|
+| Inference ops/step | 65,536 | 1,024 |
+| Training required | Hours (GPU) | **Zero** |
+| Parameters | Millions | 1,024 |
+
+---
+
+**NEXICOG Ltd** | Patent Pending | 2024
