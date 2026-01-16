@@ -24,7 +24,43 @@ Easy to verify outputs
 The results below are just a small sample of the system’s untapped potential. And after interacting with it, I can’t help but feel it deserves a place on my workstation—a green monitor glowing warmly, housing the adaptive AI system we could have had 40 years ago.
 
 ---
+## What Original BBC BASIC Actually Did
 
+For readers who grew up with conversational AI, it's worth understanding what interacting with a 1980s computer was actually like.
+If you typed this into a real BBC BASIC prompt:
+>hello i need a file
+You would get:
+Mistake
+>
+That's it. No understanding. No suggestions. Just "Mistake."
+The original interpreter followed a rigid sequence:
+
+Read characters one at a time from the keyboard buffer
+Check the first token—is it a line number? A keyword? A variable?
+"hello"—not a keyword, not a number, attempt to parse as variable assignment
+"i"—invalid syntax, not an operator
+Stop. Print "Mistake." Return to prompt.
+
+The machine had no concept of intent. It couldn't understand that "file" meant you wanted LOAD or SAVE. It couldn't infer that "draw something" meant graphics commands. Every input required exact syntax or it failed immediately.
+>LOAD "GAME"        ← Valid (exact syntax)
+>load a game        ← Mistake
+>get my file        ← Mistake  
+>i want to draw     ← Mistake
+There was no bridge between human thought and machine syntax. You had to already know the command, spell it correctly, and format it precisely. The computer met you nowhere.
+
+
+
+## What The Navigator Does
+
+
+This system closes that 40-year gap.
+The same input:
+>hello i need a file
+Produces:
+basic110 LOAD "FILE"
+120 SAVE "FILE"
+It understood "file" → memory operations → LOAD/SAVE.
+This is the conversational interface that 1980s computing never had—not because the hardware couldn't support it, but because the geometric principles enabling it weren't understood yet.
 ## What It Does
 
 A system that translates natural language into BBC BASIC programs through geometric navigation. 
