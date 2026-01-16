@@ -1,0 +1,312 @@
+============================================================
+BBC BASIC GEOMETRIC NAVIGATOR
+============================================================
+
+Type what you want to make in plain English.
+Examples:
+  - get user input and display it
+  - loop 10 times and print
+  - add two numbers
+  - draw a line
+
+DEMOS available (type keyword to load):
+  - neural network / weights / propagate
+  - 3d cube / wireframe / rotate matrix
+  - mandelbrot / fractal / zoom
+  - game of life / cellular / conway / emergence
+  - plasma / sine wave / interference
+  - fire / flame / burn
+  - starfield / hyperspace / warp
+
+Type 'list' to see all demos, 'quit' to exit.
+
+------------------------------------------------------------
+What do you want to make? > hello i need a file
+
+Generated BBC BASIC:
+========================================
+   10 REM ==============================
+   20 REM  FILE OPERATIONS
+   30 REM ==============================
+  100 LOAD "FILE"
+  110 SAVE "FILE"
+  120 END
+========================================
+
+Navigations: 2
+Max coherence: 0.91
+
+------------------------------------------------------------
+What do you want to make? > lets draw something
+
+Generated BBC BASIC:
+========================================
+   10 REM ==============================
+   20 REM  GRAPHICS
+   30 REM ==============================
+  100 DRAW 700,600
+  110 END
+========================================
+
+Navigations: 2
+Max coherence: 0.99
+
+------------------------------------------------------------
+What do you want to make? > did you save your drawing?
+
+Generated BBC BASIC:
+========================================
+   10 REM ==============================
+   20 REM  GRAPHICS AND MEMORY
+   30 REM ==============================
+  100 DRAW 700,600
+  110 CLS
+  120 SAVE "FILE"
+  130 END
+========================================
+
+Navigations: 3
+Max coherence: 0.99
+
+------------------------------------------------------------
+What do you want to make? > what is the starfield?
+
+>>> Loading demo: starfield.bas
+
+BBC BASIC DEMO:
+========================================
+   10 REM ================================
+   20 REM  3D STARFIELD
+   30 REM  Hyperspace warp effect!
+   40 REM ================================
+   50 MODE 1
+   60 :
+   70 REM Number of stars
+   80 ns=200
+   90 DIM sx(ns),sy(ns),sz(ns)
+  100 DIM osx(ns),osy(ns)
+  110 :
+  120 REM Screen center
+  130 cx=640:cy=512
+  140 :
+  150 REM Initialize stars in 3D space
+  160 FOR i=1 TO ns
+  170   PROC_newstar(i)
+  180 NEXT
+  190 :
+  200 speed=15
+  210 :
+  220 REM Main loop
+  230 REPEAT
+  240   FOR i=1 TO ns
+  250     REM Store old position
+  260     osx(i)=sx(i):osy(i)=sy(i)
+  270     :
+  280     REM Move star toward viewer
+  290     sz(i)=sz(i)-speed
+  300     :
+  310     REM Reset if passed viewer
+  320     IF sz(i)<1 THEN PROC_newstar(i)
+  330     :
+  340     REM Project to 2D
+  350     IF sz(i)>0 THEN
+  360       nsx=cx+sx(i)*256/sz(i)
+  370       nsy=cy+sy(i)*256/sz(i)
+  380       :
+  390       REM Erase old position
+  400       IF osx(i)>0 AND osx(i)<1280 THEN
+  410         GCOL 0,0
+  420         PLOT 69,osx(i),osy(i)
+  430       ENDIF
+  440       :
+  450       REM Draw with depth-based brightness
+  460       IF nsx>0 AND nsx<1280 THEN
+  470         IF sz(i)<100 THEN
+  480           GCOL 0,3:REM Bright
+  490           PLOT 69,nsx,nsy
+  500         ELSE IF sz(i)<200 THEN
+  510           GCOL 0,2:REM Medium
+  520           PLOT 69,nsx,nsy
+  530         ELSE
+  540           GCOL 0,1:REM Dim
+  550           PLOT 69,nsx,nsy
+  560         ENDIF
+  570         ENDIF
+  580         :
+  590         REM Draw streak for close stars
+  600         IF sz(i)<80 THEN
+  610           GCOL 0,3
+  620           MOVE osx(i),osy(i)
+  630           DRAW nsx,nsy
+  640         ENDIF
+  650         :
+  660         sx(i)=nsx:sy(i)=nsy
+  670       ENDIF
+  680     ENDIF
+  690   NEXT
+  700 UNTIL FALSE
+  710 :
+  720 DEF PROC_newstar(i)
+  730   sx(i)=(RND(1000)-500)
+  740   sy(i)=(RND(800)-400)
+  750   sz(i)=RND(300)+100
+  760   osx(i)=cx:osy(i)=cy
+  770 ENDPROC
+========================================
+
+Loaded from examples/starfield.bas
+
+------------------------------------------------------------
+What do you want to make? > what does emergence look like?
+
+>>> Loading demo: game_of_life.bas
+
+BBC BASIC DEMO:
+========================================
+   10 REM ================================
+   20 REM  CONWAY'S GAME OF LIFE
+   30 REM  Emergence from simple rules!
+   40 REM ================================
+   50 MODE 1
+   60 :
+   70 REM Grid dimensions
+   80 gw=64:gh=40
+   90 cs=16:REM Cell size
+  100 :
+  110 REM Two grids - current and next
+  120 DIM grid(gw,gh),next(gw,gh)
+  130 :
+  140 REM Initialize with Gosper Glider Gun
+  150 RESTORE 1500
+  160 FOR i=1 TO 36
+  170   READ gx,gy
+  180   grid(gx+5,gy+15)=1
+  190 NEXT
+  200 :
+  210 generation=0
+  220 population=0
+  230 :
+  240 REM Main evolution loop
+  250 REPEAT
+  260   generation=generation+1
+  270   population=0
+  280   CLG
+  290   :
+  300   REM Calculate next generation
+  310   FOR x=1 TO gw-2
+  320     FOR y=1 TO gh-2
+  330       REM Count neighbors
+  340       n=0
+  350       n=n+grid(x-1,y-1)+grid(x,y-1)+grid(x+1,y-1)
+  360       n=n+grid(x-1,y)+grid(x+1,y)
+  370       n=n+grid(x-1,y+1)+grid(x,y+1)+grid(x+1,y+1)
+  380       :
+  390       REM Apply rules
+  400       IF grid(x,y)=1 THEN
+  410         IF n=2 OR n=3 THEN next(x,y)=1 ELSE next(x,y)=0
+  420       ELSE
+  430         IF n=3 THEN next(x,y)=1 ELSE next(x,y)=0
+  440       ENDIF
+  450     NEXT
+  460   NEXT
+  470   :
+  480   REM Draw cells
+  490   FOR x=1 TO gw-2
+  500     FOR y=1 TO gh-2
+  510       grid(x,y)=next(x,y)
+  520       IF grid(x,y)=1 THEN
+  530         population=population+1
+  540         GCOL 0,1+(RND(3)-1)
+  550         px=x*cs:py=y*cs
+  560         MOVE px,py
+  570         PLOT 97,cs-2,cs-2
+  580       ENDIF
+  590     NEXT
+  600   NEXT
+  610   :
+  620   REM Display info
+  630   GCOL 0,3
+  640   MOVE 50,980
+  650   PRINT "Gen: ";generation;" Pop: ";population
+  660   :
+  670   t=TIME+5:REPEAT UNTIL TIME>t
+  680 UNTIL population=0
+  690 :
+  700 PRINT "Extinction at generation ";generation
+  710 END
+  720 :
+ 1500 REM Gosper Glider Gun coordinates
+ 1510 DATA 1,5, 1,6, 2,5, 2,6
+ 1520 DATA 11,5, 11,6, 11,7, 12,4, 12,8
+ 1530 DATA 13,3, 13,9, 14,3, 14,9
+ 1540 DATA 15,6, 16,4, 16,8, 17,5, 17,6, 17,7
+ 1550 DATA 18,6, 21,3, 21,4, 21,5, 22,3, 22,4
+ 1560 DATA 22,5, 23,2, 23,6, 25,1, 25,2, 25,6
+ 1570 DATA 25,7, 35,3, 35,4, 36,3, 36,4
+========================================
+
+Loaded from examples/game_of_life.bas
+
+------------------------------------------------------------
+What do you want to make? > show me a flame!
+
+>>> Loading demo: fire.bas
+
+BBC BASIC DEMO:
+========================================
+   10 REM ================================
+   20 REM  FIRE EFFECT
+   30 REM  Classic demoscene fire!
+   40 REM ================================
+   50 MODE 2
+   60 :
+   70 REM Fire buffer
+   80 fw=80:fh=50
+   90 DIM fire(fw,fh)
+  100 scale=16
+  110 :
+  120 REM Main fire loop
+  130 REPEAT
+  140   :
+  150   REM Seed bottom with heat
+  160   FOR x=0 TO fw-1
+  170     fire(x,0)=RND(8)-1
+  180     IF RND(10)>7 THEN fire(x,0)=7
+  190   NEXT
+  200   :
+  210   REM Propagate fire upward
+  220   FOR y=1 TO fh-1
+  230     FOR x=1 TO fw-2
+  240       REM Average neighbors + cooling
+  250       v=fire(x-1,y-1)+fire(x,y-1)+fire(x+1,y-1)
+  260       v=v+fire(x,y-1)
+  270       v=INT(v/4)
+  280       IF v>0 AND RND(10)>6 THEN v=v-1
+  290       fire(x,y)=v
+  300     NEXT
+  310   NEXT
+  320   :
+  330   REM Render fire
+  340   FOR y=0 TO fh-1
+  350     FOR x=0 TO fw-1
+  360       c=fire(x,y)
+  370       IF c>7 THEN c=7
+  380       GCOL 0,c
+  390       px=x*scale:py=y*scale
+  400       MOVE px,py
+  410       PLOT 97,scale,scale
+  420     NEXT
+  430   NEXT
+  440   :
+  450   REM Title
+  460   GCOL 0,7
+  470   MOVE 500,950
+  480   PRINT "FIRE!"
+  490   :
+  500 UNTIL FALSE
+========================================
+
+Loaded from examples/fire.bas
+
+------------------------------------------------------------
+------------------------------------------------------------
